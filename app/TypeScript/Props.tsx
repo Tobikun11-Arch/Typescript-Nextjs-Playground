@@ -6,6 +6,7 @@ interface humanProps {
 }
 
 const Props = ({ humans }: humanProps) => {
+ 
     return (
         <div>
         {humans.map((productDetails)=> (

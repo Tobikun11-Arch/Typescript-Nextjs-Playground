@@ -29,5 +29,7 @@ export interface HumanProps {
     website: string
 }
 
+console.log("Joenel")
+
 const ArrayList = ["Joenel", "Bsit", "Section 2-1"]
 console.log(ArrayList.reverse())

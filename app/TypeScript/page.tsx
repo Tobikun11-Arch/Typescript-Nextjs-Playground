@@ -28,7 +28,6 @@ const Page = () => {
             try {
                 const response = await backend.get('');
                 setProduct(response.data.users)
-                
             } catch (error) {
                 console.error("fetch error", error)
             }
