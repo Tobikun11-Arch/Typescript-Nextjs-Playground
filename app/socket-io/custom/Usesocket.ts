@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Socket, io } from 'socket.io-client'
 
-const temporaryURL = 'wss://web-socket-backend-beryl.vercel.app/'
+const temporaryURL = process.env.NEXT_PUBLIC_GLITCH_URL
 
 const Usesocket = () => {
     const [ Socket, setSocket ] = useState<Socket | null>(null)
@@ -11,7 +11,6 @@ const Usesocket = () => {
             { transports: ['websocket'], secure: true }
         )
         setSocket(newSocket)
-        console.log(temporaryURL)
         return () => {
             newSocket.disconnect()
         }
