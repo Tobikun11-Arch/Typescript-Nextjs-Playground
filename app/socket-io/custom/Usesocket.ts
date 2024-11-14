@@ -3,19 +3,18 @@ import { Socket, io } from 'socket.io-client'
 
 const temporaryURL = 'http://localhost:5000'
 
-const socket = () => {
-    const [ socket, setSocket ] = useState<Socket | null>(null)
+const Usesocket = () => {
+    const [ Socket, setSocket ] = useState<Socket | null>(null)
 
     useEffect(()=> {
-        const newSocket = io(temporaryURL)
+        const newSocket = io(temporaryURL, { transports: ['websocket'] })
         setSocket(newSocket)
-        console.log("Socket: ", socket)
         
         return () => {
             newSocket.disconnect()
         }
     }, [])
-    return socket
+    return Socket
 }
 
-export default socket
+export default Usesocket
