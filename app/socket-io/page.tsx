@@ -72,10 +72,10 @@ const Page = () => { //Test development page
             ) : 
             (<>
                 <div className="list bg-gray-100 w-64 px-2 pb-2 h-64 overflow-y-scroll rounded shadow-md mb-3">
-                <ul className=''>
-                    {messages.map((msg, index) => (
-                        <li key={index} className={`mt-2 ${msg.sender === username ? 'ml-10 bg-blue-500 rounded-md p-2 text-black self-end text-right' : 'text-black bg-gray-500 self-start rounded-md p-2 text-left'}`}>
-                            <span className='font-bold'>{msg.sender === username ? (<><span className='text-xs'>{msg.text}</span></>) : (<>{msg.sender}: <span className='text-white'>{msg.text} sd</span></>)}</span> 
+                <ul>
+                    {messages.map((msg, index) => ( //Tricks
+                        <li key={index} className={`mt-2 ${msg.sender === username ? 'ml-10 bg-blue-600 rounded-md p-2 text-black self-end text-right' : 'text-black bg-gray-500 self-start rounded-md p-2 text-left'}`}>
+                            <span className='font-bold'>{msg.sender === username ? (<><span className='text-sm text-white'>{msg.text}</span></>) : (<><span className='text-sm'>{msg.sender}:</span> <span className='text-white text-sm'>{msg.text}</span></>)}</span> 
                         </li>
                     ))}
                     <div ref={bottomRef}/>
