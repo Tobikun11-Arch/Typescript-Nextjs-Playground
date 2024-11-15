@@ -1,7 +1,6 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import BarChart from './components/BarChart'
-import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import { chartdata } from '../axios/axiosInstance'
 
