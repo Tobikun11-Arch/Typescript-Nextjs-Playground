@@ -4,7 +4,7 @@ import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 
-const page = () => {
+const Page = () => {
     const { toast } = useToast()
     const date = "November 15, 2024"
     return (
@@ -25,4 +25,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

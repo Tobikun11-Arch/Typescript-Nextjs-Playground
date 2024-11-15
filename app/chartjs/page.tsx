@@ -2,34 +2,33 @@
 import React, { useEffect, useState } from 'react'
 import BarChart from './components/BarChart'
 import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
+import { chartdata } from '../axios/axiosInstance'
 
 interface BarChartProps {
     labels: string[]
     values: number[]
 }
-const temporaryUrl = 'http://localhost:5000/years/data'
 
-const page = () => {
-    const [ chartData, setChartData ] = useState<BarChartProps | null>(null)
+const Page = () => {
 
-    useEffect(()=> {    
-        const fetchdata = async () => {
-            try {
-                const response = await axios.get<BarChartProps>(temporaryUrl)
-                setChartData({
-                    labels: response.data.labels,
-                    values: response.data.values,
-                });
-            } catch (error) {
-                console.error(error)
-            }
-        }   
-        fetchdata()
-    },[])
+    const fetchData = async() => {
+        const response = await chartdata.get('')
+        const { labels, values } = response.data 
+        return { labels, values }
+    }
 
-    const values = chartData?.values.sort((a,b)=> Number(a) - Number(b))
+    const { data, isLoading, isError } = useQuery<BarChartProps | null>({
+        queryKey: ['data'],
+        queryFn: fetchData
+    })
 
-    return <BarChart data={{ labels: chartData?.labels, values: values }}/> //barchart
+    if(isLoading) return <h2>Loading...</h2>
+    if(isError) return <h2>Failed to fetch</h2>
+
+    const values = data?.values.sort((a,b)=> Number(a) - Number(b))
+
+    return <BarChart data={{ labels: data?.labels, values: values }}/> //barchart
 }
 
-export default page
+export default Page
