@@ -8,6 +8,7 @@ import {
     Title,
     Tooltip,
     CategoryScale,
+    AnimationSpec
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -33,7 +34,7 @@ const ChartLine = () => {
         plugins: {
             title: {
             display: true,
-            text: "Line Chart Example with Animation",
+            text: "Line chart",
             },
         },
         scales: {
@@ -45,11 +46,11 @@ const ChartLine = () => {
         animations: {
             tension: {
                 duration: 1000,
-                easing: "linear",
+                easing: "linear" as const,
                 from: 1,
                 to: 0,
-                loop: true, // Enables looping animations
-            } as any,
+                loop: true,
+            } as AnimationSpec<'line'>,
         },
     };
 

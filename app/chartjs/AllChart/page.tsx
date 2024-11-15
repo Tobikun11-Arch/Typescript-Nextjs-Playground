@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import ChartLine from './Charts/ChartLine'
 import { chartdata } from '@/app/axios/axiosInstance'
 import { useQuery } from '@tanstack/react-query'
@@ -29,7 +29,7 @@ const Page = () => {
     const labels = datas?.labels.sort((a,b)=> Number(a) - Number(b))
     
     return  (
-        <div className='h-screen p-4 flex'>
+        <div className='min-h-screen p-4 grid grid-cols-1 '>
             <ChartLine/>
             <PolarChart data={{ labels: labels, values: datas?.values }}/>
         </div>

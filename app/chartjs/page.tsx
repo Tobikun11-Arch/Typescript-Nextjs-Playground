@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState, FC } from 'react'
+import React, { useEffect, useState } from 'react'
 import BarChart from './components/BarChart'
 import axios from 'axios'
 
@@ -9,7 +9,7 @@ interface BarChartProps {
 }
 const temporaryUrl = 'http://localhost:5000/years/data'
 
-const page: FC = () => {
+const page = () => {
     const [ chartData, setChartData ] = useState<BarChartProps | null>(null)
 
     useEffect(()=> {    

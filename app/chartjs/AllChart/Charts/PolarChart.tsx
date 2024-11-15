@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC } from 'react'
 import { PolarArea } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -39,11 +39,15 @@ const PolarChart: FC<PolarChartProps> = ({ data }) => {
     responsive: true,
     plugins: {
       legend: { position: "top" as const },
-      title: { display: true, text: "My Polar Chart" },
+      title: { display: true, text: "Step chart" },
     },
   };
 
-    return <PolarArea data={polarData} options={options}/>
+    return (
+      <div className='h-3/4 w-3/4'>
+        <PolarArea data={polarData} options={options}/>
+      </div>
+    )
 }
 
 export default PolarChart
