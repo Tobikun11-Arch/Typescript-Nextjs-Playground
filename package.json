@@ -9,15 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.60.2",
+    "@tanstack/react-query-devtools": "^5.60.2",
     "axios": "^1.7.7",
+    "chart.js": "^4.4.6",
+    "ldrs": "^1.0.2",
     "my-playground": "file:",
     "next": "15.0.2",
     "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "socket.io-client": "^4.8.1",
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
