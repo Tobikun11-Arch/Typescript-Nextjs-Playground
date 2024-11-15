@@ -29,7 +29,7 @@ const page: FC = () => {
 
     const values = chartData?.values.sort((a,b)=> Number(a) - Number(b))
 
-    return <BarChart data={{ labels: chartData?.labels, values: values }}/>
+    return <BarChart data={{ labels: chartData?.labels, values: values }}/> //barchart
 }
 
 export default page

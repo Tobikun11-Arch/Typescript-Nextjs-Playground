@@ -19,6 +19,7 @@ interface BarChartProps {
     }
 }
 
+//Samle of chart that data is from backend and not manual
 const BarChart: FC<BarChartProps> = ({ data }) => {
     const [chartData, setChartData] = useState({
         labels: data.labels,
