@@ -20,3 +20,10 @@ export const chartdata = axios.create({
         "Content-Type": "application/type",
     },
 })
+
+export const realtimeData = axios.create({
+    baseURL: 'http://localhost:5000/real-time/data',
+    headers: {
+        "Content-Type": "application/type",
+    },
+})
