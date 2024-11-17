@@ -23,9 +23,7 @@ const Page = () => {
         const { timestamp, value } = response.data
         return { timestamp, value } 
     }
-
     const chartRef = useRef<any>()
-
     const [ chartData, setChartdata ] = useState({
         labels: [] as string[],
         datasets: [
