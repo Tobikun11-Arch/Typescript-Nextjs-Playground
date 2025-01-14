@@ -138,10 +138,10 @@ export const columns: ColumnDef<tableData>[] = [
                 <DropdownMenuItem
                 onClick={() => navigator.clipboard.writeText(payment._id)}
                 >
-                Copy payment ID
+                Copy Product ID
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>View product</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> console.log("working", row.original._id)}>View product</DropdownMenuItem>
                 <DropdownMenuItem>Edit product</DropdownMenuItem>
             </DropdownMenuContent>
             </DropdownMenu>
