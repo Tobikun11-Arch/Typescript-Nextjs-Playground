@@ -10,7 +10,7 @@ import {
     getCoreRowModel,
     getFilteredRowModel,
     getPaginationRowModel,
-    getSortedRowModel,
+    getSortedRowModel,  
     useReactTable,
 } from "@tanstack/react-table"
 import { ChevronsUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
